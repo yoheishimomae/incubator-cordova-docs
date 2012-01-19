@@ -1,0 +1,147 @@
+<!-- android guide start-->
+<ul id="guide-android" class="guide" style="display:none">		
+	<li class="top"></li>
+	<li class="bottom"></li>
+
+	<li class="video-guide"><h3>Video Tutorials:</h3>
+		<div class="video-container">
+			<img title="video_image" src="images/v_android.jpeg" alt="" />
+			<div>
+				<a rel="#voverlay" href="http://www.youtube.com/v/MzcIcyBYJMA?autoplay=1" title="PhoneGap and Android quick start video using eclipse" onclick="pageTracker._trackEvent('Video', 'Play');" data-title="PhoneGap and Android quick start video using ecliplse"></a>
+			</div>
+			<div class="video-frame vf-top"></div><div class="video-frame vf-bottom"></div>
+			<div class="video-frame vf-left"></div><div class="video-frame vf-right"></div>
+		</div>
+	</li>
+
+	<li><h3>1. Requirements</h3>
+		<ul>
+			<li>Eclipse 3.4+</li>
+		</ul>
+		<p>There is also a <a href="http://wiki.phonegap.com/w/page/30864168/phonegap-android-terminal-quickstart">Terminal</a> version of this tutorial that doesn't use Eclipse.</p>
+	</li>
+
+	<li><h3>2. Install SDK + PhoneGap</h3>
+		<div class="sdk-img"><img src="images/sdk_eclipse.png" alt=""/></div>
+		<p class="sdk-p">Download and install <a href="http://www.eclipse.org/downloads/">Eclipse Classic</a></p>
+		<br/>
+		<div class="sdk-img"><img src="images/os_android.png" alt=""/></div>
+		<p class="sdk-p">Download and install <a href="http://developer.android.com/sdk/index.html">Android SDK</a></p>
+		<br/>
+		<div class="sdk-img"><img src="images/os_android.png" alt=""/></div>
+		<p class="sdk-p">Download and install <a href="http://developer.android.com/sdk/eclipse-adt.html#installing">ADT Plugin</a></p>
+		<br/>
+		<div class="sdk-img"><img src="images/sdk_phonegap.png" alt=""/></div>
+		<p style="display:table-cell;vertical-align:middle"><a href="/download">Download</a> the latest copy of PhoneGap and extract its contents. We will be working with the Android directory.</p>
+	</li>
+
+	<li><h3>3. Setup New Project</h3>
+		<ul>
+			<li>Launch Eclipse, then under the File menu select <strong>New > Android Project</strong></li>
+		</ul>
+		<img src="images/New Android Project.jpeg" alt="" style="margin-top:12px"/>
+		<ul>
+			<li>In the root directory of the project, create two new directories:
+				<ul>
+					<li>/libs</li>
+					<li>images/www</li>
+				</ul>
+			</li>
+			<li>Copy phonegap.js from your PhoneGap download earlier to images/www</li>
+			<li>Copy phonegap.jar from your PhoneGap download earlier to /libs </li>
+			<li>Copy xml folder from your PhoneGap download earlier to /res </li>
+			<li>Make a few adjustments too the project's main Java file found in the src folder in Eclipse: (view image below)
+				<ul>
+					<li>Change the class's extend from <strong>Activity</strong> to <strong>DroidGap</strong></li>
+					<li>Replace the <strong>setContentView()</strong> line with <strong>super.loadUrl("file:///android_asset/www/index.html");</strong></li>
+					<li>Add <strong>import com.phonegap.*;</strong> </li>
+					<li>Remove <strong>import android.app.Activity;</strong> </li>
+				</ul>
+				<br/>
+				<img src="images/javaSrc.jpg" alt="javaSrc"/>
+			</li>
+			
+			<li>You might experience an error here, where Eclipse can't find phonegap-1.0.0.jar. In this case, right click on the /libs folder and go to Build Paths/ > Configure Build Paths. Then, in the Libraries tab, add phonegap-1.0.0.jar to the Project. If Eclipse is being temperamental, you might need to refresh (F5) the project once again.</li>
+			<li>Right click on AndroidManifest.xml and select <strong>Open With > Text Editor</strong></li>
+			<li>Paste the following permissions under versionName: (view image below) <br/>
+				<div class="code-wrapper">
+				<code>&lt;supports-screens<br/>
+				        android:largeScreens="true"<br/>
+				        android:normalScreens="true"<br/>
+				        android:smallScreens="true"<br/>
+				        android:resizeable="true"<br/>
+				        android:anyDensity="true"<br/>
+				        /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.CAMERA" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.VIBRATE" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.READ_PHONE_STATE" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.INTERNET" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.RECEIVE_SMS" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.READ_CONTACTS" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.WRITE_CONTACTS" /&gt;<br/>   
+				        &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;<br/>   
+				        &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+				        &lt;uses-permission android:name="android.permission.GET_ACCOUNTS" /&gt;<br/>
+				        &lt;uses-permission android:name="android.permission.BROADCAST_STICKY" /&gt;</code></div></li>
+			<li>Add <code>android:configChanges="orientation|keyboardHidden"</code> to the activity tag in AndroidManifest. (view image below)</li>
+			<li>Add a second activity under you appliction tag in AndroidManifest. (view image below)<br/>
+				<div class="code-wrapper">
+					<code>
+						 &lt;activity android:name="com.phonegap.DroidGap" android:label="@string/app_name" android:configChanges="orientation|keyboardHidden"&gt;
+        					&lt;intent-filter&gt;
+				            &lt;/intent-filter&gt;
+				        &lt;/activity&gt;
+					</code>
+				</div>
+			<img src="images/manifest.jpg"  height="810" width="790" alt="manifest"/>
+			</li>
+		</ul>
+	</li>
+
+	<li><h3>4. Hello World</h3>
+		<p>Now create and open a new file named <strong>index.html</strong> in the <strong>images/www</strong> directory. Paste the following code:
+		<br/></p>
+		<div class="code-wrapper"><code>
+			&lt;!DOCTYPE HTML&gt;<br/>
+			&lt;html&gt;<br/>
+
+			  &lt;head&gt;<br/>
+			    &lt;title&gt;PhoneGap&lt;/title&gt;<br/>
+				&lt;script type="text/javascript" charset="utf-8" src="phonegap.js"&gt;&lt;/script&gt;<br/>
+			  &lt;/head&gt;<br/>
+
+			  &lt;body&gt;<br/>
+			  &lt;h1&gt;Hello World&lt;/h1&gt;<br/>
+
+			  &lt;/body&gt;<br/>
+
+			&lt;/html&gt;<br/>
+		</code></div>
+		<br/>
+		*phonegap.js might need to be replaced with phonegap.&lt;VERSION NUMER&gt;.js
+	</li>
+
+	<li><h3>5A. Deploy to Simulator</h3>
+		<ul>
+			<li>Right click the project and go to <strong>Run As</strong> and click <strong>Android Application</strong></li>
+			<li>Eclipse will ask you to select an appropriate AVD. If there isn't one, then you'll need to create it.</li>
+		</ul>
+	</li>
+
+	<li><h3>5B. Deploy to Device</h3>
+		<ul>
+			<li>Make sure USB debugging is enabled on your device and plug it into your system. (Settings > Applications > Development)</li>
+			<li>Right click the project and go to <strong>Run As</strong> and click <strong>Android Application</strong></li>
+		</ul>
+	</li>		
+
+	<li><h3>Done!</h3>
+		<p>You can also checkout more detailed version of this guide <a href="http://wiki.phonegap.com/w/page/30862722/phonegap-android-eclipse-quickstart">here</a>.</p>
+	</li>
+</ul> 
+<!-- android guide end-->

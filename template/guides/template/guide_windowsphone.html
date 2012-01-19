@@ -1,0 +1,92 @@
+<!-- windows phone guide start-->
+<ul id="guide-wp" class="guide" style="display:none">		
+	<li class="top"></li>
+	<li class="bottom"></li>
+
+	<li class="video-guide"><h3>Video Tutorials:</h3>
+		<div class="video-container">
+			<img title="video_image" src="images/v_android.jpeg" alt="" />
+			<div>
+				<a rel="#voverlay" href="https://www.youtube.com/v/wO9xdRcNHIM?autoplay=1" title="PhoneGap and Windows Phone quick setup video" onclick="pageTracker._trackEvent('Video', 'Play');" data-title="PhoneGap and Windows Phone quick setup video"></a>
+			</div>
+			<div class="video-frame vf-top"></div>
+			<div class="video-frame vf-bottom"></div>
+			<div class="video-frame vf-left"></div>
+			<div class="video-frame vf-right"></div>
+		</div>
+		<div class="video-container">
+			<img title="video_image" src="images/v_android.jpeg" alt="" />
+			<div>
+				<a rel="#voverlay" href="http://www.youtube.com/v/BJFX1GRUXj8?autoplay=1" title="PhoneGap and Windows Phone deep dive" onclick="pageTracker._trackEvent('Video', 'Play');" data-title="PhoneGap and Windows Phone deep dive video"></a>
+			</div>
+			<div class="video-frame vf-top"></div>
+			<div class="video-frame vf-bottom"></div>
+			<div class="video-frame vf-left"></div>
+			<div class="video-frame vf-right"></div>
+		</div>
+	</li>
+
+		
+	<li><h3>1. Requirements</h3>
+		<ul>
+			<li>Windows 7 or Windows Vista with SP2</li>
+		</ul>
+		<p>Note: Running in VM has issues, if you are on a Mac, you will need to setup a bootcamp partition with Windows 7 or Vista</p>
+		<p>Necessary for Installing on Device and Submitting to Market Place:</p>
+		<ul>
+			<li>Become an <a href="http://create.msdn.com/en-US/home/membership">App Hub member</a>.</li>
+		</ul>
+	</li>
+
+	<li><h3>2. Install SDK + PhoneGap</h3>
+		<div class="sdk-img"><img src="images/sdk_wp.png" alt=""/></div>
+		<p class="sdk-p">Download and install the <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=27570">Windows Phone  SDK.</a>
+		</p>
+		<br/>
+		<div class="sdk-img"><img src="images/sdk_phonegap.png" alt=""/></div>
+		<p style="display:table-cell;vertical-align:middle"><a href="http://phonegap.com/download">Download</a> the latest copy of PhoneGap and extract its contents. Navigate to the Windows Phone directory and copy the file <strong>PhoneGapStarter.zip</strong> to your templates folder located at <strong>C:\Users\[USERNAME]\Documents\Visual Studio 2010\Templates\ProjectTemplates\Silverlight for Windows Phone</strong></p>
+	</li>
+
+	<li><h3>3. Setup New Project</h3>
+		<ul>
+			<li>Open Visual Studio Express for Windows Phone and choose <strong>New Project</strong>.</li>
+			<li>Select <strong>PhoneGapStarter</strong>.</li>
+			<li>Give your project a name, and select OK.</li>
+		</ul>
+		<img src="images/wpnewproj.PNG" alt=""/>
+	</li>
+
+	<li><h3>4. Review the project structure</h3>
+		<ul>
+			<li>The 'www' folder contains your PhoneGap html/js/css and any other resources included in your app.</li>
+			<li>Any content that you add here needs to be a part of the Visual Studio project, and it must be set as content. </li>
+		</ul>
+		<img src="images/wp7projectstructure.PNG" alt=""/>
+	</li>
+
+	<li><h3>5. Build and Deploy to Emulator</h3>
+		<ul>
+			<li>Make sure to have <strong>Windows Phone Emulator</strong> selected in the top drop-down menu.</li>
+			<li>Hit the green <strong>play button</strong> beside the Windows Phone Emulator drop-down menu to start debugging or press F5.</li>
+		</ul>
+		<img src="images/wprun.png" alt=""/>
+		<p> </p>
+		<img src="images/wpfirstrun.PNG" alt=""/>
+	</li>
+
+	<li><h3>6. Build your project for the device</h3>
+		<p>In order to test your application on a device, the device must be registered. Click <a href="http://msdn.microsoft.com/en-us/library/gg588378(v=VS.92).aspx">here</a> to read documentation on deploying and testing on your Windows Phone.</p>
+		<ul>
+			<li>Make sure your phone is connected, and the screen is unlocked</li>
+			<li>In Visual Studio, select 'Windows Phone Device' from the top drop-down menu.</li>
+			<li>Hit the green <strong>play button</strong> beside the drop-down menu to start debugging or press F5.</li>
+		</ul>
+		<img src="images/wpd.png" alt=""/>
+	</li>
+		
+
+	<li><h3>Done!</h3>
+		<p>You can also checkout the wiki version of this guide <a href="http://wiki.phonegap.com/w/page/48672055/Getting%20Started%20with%20PhoneGap%20Windows%20Phone%207">here</a>.</p>
+	</li>
+</ul>
+<!-- windows phone guide end-->

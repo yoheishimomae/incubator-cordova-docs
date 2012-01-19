@@ -1,0 +1,86 @@
+<!-- ios guide start-->
+<ul id="guide-ios-x4" class="guide">		
+	<li class="top"></li>
+	<li class="bottom"></li>
+
+	<li class="video-guide"><h3>Video Tutorials:</h3>
+		<div class="video-container">
+			<img title="video_image" src="images/v_ios.jpeg" alt="" />
+			<div>
+				<a rel="#voverlay" href="http://www.youtube.com/v/R9zktJUN7AI?autoplay=1" title="PhoneGap Installer - Xcode 4 Template" onclick="pageTracker._trackEvent('Video', 'Play');" data-title="PhoneGap Installer - Xcode 4 Template"></a>
+			</div>
+			<div class="video-frame vf-top"></div>
+			<div class="video-frame vf-bottom"></div>
+			<div class="video-frame vf-left"></div>
+			<div class="video-frame vf-right"></div>
+		</div>
+	</li>
+
+
+	<li><h3>1. Requirements</h3>
+		<ul>
+			<li>Intel-based computer with Mac OS X Snow Leopard (10.6)</li>
+		</ul>
+		<p>Necessary for Installing on Device:</p>
+		<ul>
+			<li>An Apple iOS device (iPhone, iPad, iPod Touch)</li>
+			<li>iOS developer certification</li>
+		</ul>
+	</li>
+
+	<li><h3>2. Install SDK + PhoneGap</h3>
+		<div class="sdk-img"><img src="images/sdk_xcode.png" alt=""/></div>
+		<p class="sdk-p">Download and install Xcode from <a href="http://developer.apple.com">Apple Developer Portal</a> (Membership required)</p>
+		<br/>
+		<div class="sdk-img"><img src="images/sdk_phonegap.png" alt=""/></div>
+		<p style="display:table-cell;vertical-align:middle"><a href="/download">Download</a> the latest copy of PhoneGap and extract its contents. Navigate to the iOS directory and run the installer until completion.</p>
+	</li>
+
+	<li><h3>3. Setup New Project</h3>
+		<ul>
+			<li>Launch Xcode, then under the File menu select <strong>New</strong> and then <strong>New Project...</strong></li>
+			<li>Select <strong>PhoneGap-based Application</strong> from the list of templates</li>
+		
+		</ul>
+		<img src="images/XCode4-templates.png" width="569" height="473" alt=""/>
+		<ul>
+			<li>Select the <strong>Next</strong> button, Fill in the "Product Name" &amp; "Company Identifier" for your app</li>
+		</ul>
+		<img src="images/xcode4-name your app.png" width="569" height="473" alt=""/>
+		<ul>
+			<li>Choose a directory to store your app</li>
+			<li>You should see your project in Xcode 4 now. Press the <strong>Run</strong> button in the top left corner. Your build should succeed and launch in the simulator</li>
+			<li>You should see a error in your simulator informing you index.html was not found</li>
+			<li>To fix this, we need to copy the <strong>www</strong> directory into the project. Right click on the project in the left navigation window and click show in finder</li>
+			<li>In Finder, you should see the <strong>www</strong> directory beside your project</li>
+			<li>Next step is <strong>IMPORTANT</strong>! Drag the <strong>www</strong> folder into Xcode 4. You can't just drag the www folder into your app's folder. It needs to be dragged into Xcode 4!! In my case I would drag it and drop it on HiWorld shown below.<br/><img src="images/project.jpg" alt=""/></li>
+			<li>After you drag, you should see a prompt with a few options. Make sure to select <strong>Create folder references for any added folders</strong>. Click Finish</li>
+		</ul>
+	
+	</li>
+
+	<li><h3>4. Hello World</h3>
+		<p>Open the folder named <strong>www</strong> and type <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code> after the <code>&lt;body&gt;</code> tag in <strong>index.html</strong>. You can also add any associated Javascript and CSS files there as well.</p>
+	</li>
+
+	<li><h3>5A. Deploy to Simulator</h3>
+		<ul>
+			<li>Make sure to change the Active SDK in the top left menu to <strong>Simulator+version#</strong>.</li>
+			<li>Hit <strong>Run</strong> in your project window header.</li>
+		</ul>
+	</li>
+
+	<li><h3>5B. Deploy to Device</h3>
+		<ul>
+			<li>Open [AppName]-Info.plist and change <strong>BundleIdentifier</strong> to the identifier provided by Apple. If you have a developer license, you can access and run the Assistant at <a href="http://developer.apple.com/iphone/manage/overview/index.action">here</a> and register your App.</li>
+			<li>Make sure to change the Active SDK in the top left menu to <strong>Device+version#</strong>.</li>
+			<li>Hit <strong>Run</strong> in your project window header.</li>
+		</ul>	
+		<img src="images/HelloWorldiPhone4.png" alt=""/>
+	</li>		
+
+	<li><h3>Done!</h3>
+		<p>You can also checkout more detailed version of this guide <a href="http://wiki.phonegap.com/w/page/39991939/Getting-Started-with-PhoneGap-iOS-using-Xcode-4-%28Template-Version%29">here</a>.</p>
+	</li>
+</ul> 
+<!-- ios Xcode4 guide end-->
