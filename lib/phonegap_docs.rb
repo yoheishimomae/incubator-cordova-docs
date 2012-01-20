@@ -7,7 +7,6 @@ require 'file_merger'
 require 'add_title'
 require 'update_index'
 require 'update_keyword_index'
-require 'start_guides'
 require 'jodoc'
 require 'fileutils'
 require 'table_of_contents'
@@ -84,7 +83,7 @@ class PhoneGapDocs
   end
   
   def after_jodoc(input_directory, options)
-    klasses = [ AddTitle.new, UpdateIndex.new, UpdateKeywordIndex.new, StartGuides.new, TableOfContents.new, VersionMenu.new(options), NavigationMenu.new(options), Prettify.new ]
+    klasses = [ AddTitle.new, UpdateIndex.new, UpdateKeywordIndex.new, TableOfContents.new, VersionMenu.new(options), NavigationMenu.new(options), Prettify.new ]
     
     klasses.each do |klass|
       each_file input_directory do |file|
