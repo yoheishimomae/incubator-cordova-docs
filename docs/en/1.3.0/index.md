@@ -60,9 +60,5 @@
             <h2><a href="_index.html">Keyword Index</a></h2>
             <span>Full index of the PhoneGap Documentation.</span>
         </li>
-		<li>
-            <h2><a href="guides.html">Getting Started</a></h2>
-            <span>Hello world examples for each platform.</span>
-        </li>
     </ul>
 </div>
